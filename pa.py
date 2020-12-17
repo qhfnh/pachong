@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 
 
 def get_html(url):
-    user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
     request = urllib.request.Request(url)
     request.add_header(
         'User-Agent',
@@ -24,7 +23,6 @@ def get_html(url):
 
 
 def parase_html(html_text):
-    imgages = []
     soup = BeautifulSoup(html_text, 'lxml')
     # soup.findAll(lambda tag:tag.has_attr('target') and tag.has_attr('href'))
     tag_a = soup.findAll('a',
